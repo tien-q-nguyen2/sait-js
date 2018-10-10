@@ -34,6 +34,9 @@ console.log(attributedQuote);
 function attribute(quote, author) {
     return quote + ' ' + author;
 }
+var exampleQuote = "The key to being a successful programmer is to learn how to learn.";
+var exampleAuthor = "- Shannon Burns";
+console.log(attribute(exampleQuote, exampleAuthor));
 
 //5. Create a function `sumOfNumbers` that takes 2 numbers and returns the sum of those numbers.
 function sumOfNumbers(num1, num2) {
@@ -63,7 +66,7 @@ function sumOfLowNumbers(num1, num2, num3, num4, num5) {
 
 //7. Go to https://pages.github.com/ and read through the tutorial to create a Github page.
 // Choose Project site, Start from scratch. When you're finished, link your new project page here.
-
+"https://tien-q-nguyen2.github.io/sait-js/"
 
 
 //8. Commit and push this file to your repository. Submit the URL for Assignment 1 on Brightspace.
