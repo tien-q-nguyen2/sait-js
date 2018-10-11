@@ -112,8 +112,15 @@ wrapper.style.flexDirection = 'column';
 wrapper.style.alignItems = 'center';
 
 var pageHeader = document.getElementById('header');
-pageHeader.innerHTML = '<h1>Oh Nose!</h1><p>I changed the header!</p>';
+pageHeader.innerHTML = '<h1>Oh Nose!</h1><p>I hijacked this site!</p>';
 
 var pageFooter = document.getElementById('footer');
 pageFooter.innerHTML += '<p>Give me all your money</p>';
 
+//----Activity: Create a Paragraph
+var paragraphElement = document.createElement('p');
+var paragraphText = document.createTextNode('Save the world, donate today');
+paragraphElement.appendChild(paragraphText);
+
+var divElement = document.getElementById('header');
+divElement.appendChild(paragraphElement);
