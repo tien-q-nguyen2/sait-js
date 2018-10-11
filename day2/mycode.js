@@ -222,7 +222,7 @@ function dayOfWeek(dayNum){
     var dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     return dayNames[dayNum];
 }
-console.log(dayOfWeek(3));
+console.log(dayOfWeek(today.getDay()));
 
 
 //----Activity: Math----//

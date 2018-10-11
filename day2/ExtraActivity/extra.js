@@ -77,11 +77,127 @@ DrEvil(1000000);
 
 //MixUp
 function mixUp(str1, str2) {
-    var temp1 = str1, temp2 = str2;
-    temp1 = str1.substr(1,2);
-    temp2 = str2.substr(1,2);
-    str1 = str1[0] + temp2;
-    str2 = str2[0] + temp1;
-    return str2 + ' ' + str1;
+    var slice1 = str1.slice(0,2);
+    var slice2 = str2.substring(0,2);
+    str1 = slice2 + str1.slice(2, str1.length);
+    str2 = slice1 + str2.slice(2, str2.length);
+    return str1 + ' ' + str2;
 }
-console.log(mixUp('mad', 'dog'));
+console.log(mixUp('mix', 'pod'));
+console.log(mixUp('dog', 'dinner'));
+
+
+//FixStart
+function fixStart(aString) {
+    var firstChar = aString[0];
+    var retString = '';
+    var indicesToReplace = [];
+    for (var i = 1; i < aString.length; i++) {
+        if (aString[i] === firstChar) {
+            indicesToReplace.push(i);
+        }
+    }
+    var j = 0;
+    for (var i = 0; i < aString.length; i++) {
+        if (i === indicesToReplace[j]){
+            j++;
+            retString += '*';
+            continue;
+        }
+        retString += aString[i];
+    }
+    return retString;
+}
+
+console.log(fixStart('babble'));
+console.log(fixStart('heather'));
+
+
+//Verbing
+function verbing(aString) {
+    var retString;
+    if (aString.substr(aString.length - 3, 3) === 'ing'){
+        retString = aString + 'ly';  
+    }
+    else if (aString.length >= 3) {
+        retString = aString + 'ing';
+    } else {
+        retString = aString;
+    }
+    return retString;
+}
+
+console.log(verbing('swim'));
+console.log(verbing('swimming'));
+console.log(verbing('go'));
+
+
+//Not Bad
+function notBad(aString) {
+    var retString;
+    var indexOfNot = aString.indexOf('not');
+    var indexOfBad = aString.indexOf('bad');
+    if (indexOfNot === -1 || indexOfBad === -1){
+        retString = aString;
+    }
+    else if (indexOfNot < indexOfBad) {
+        retString = aString.substring(0, indexOfNot) + 'good' 
+            + aString.substring(indexOfBad + 3, aString.length);
+    }
+    return retString;
+}
+console.log(notBad('This dinner is not that bad!'));
+console.log(notBad('This movie is not so bad!'));
+console.log(notBad('This dinner is bad!'));
+
+
+//The Word Guesser
+var wordLetters = ['S', 'A', 'N', 'G'];
+var currentLetters = ['_','_','_','_'];
+var guesses = [];
+var hangmanCount = 0;
+
+console.log('You are now participating in a game of Hangman.');
+console.log('Use guessLetter(<a guess letter>) to play.');
+console.log('Hint: The word has ' + wordLetters.length + ' letters.');
+console.log('You have 6 attempts.');
+function guessLetter(guessedLetter) {
+    guessedLetter = guessedLetter.toUpperCase();
+    console.log('You guessed:', guessedLetter);
+
+    for (var i = 0; i < wordLetters.length; i++){
+        if (guesses.includes(guessedLetter)){
+            break;
+        }
+        if (guessedLetter === wordLetters[i]){
+            hangmanCount--; //to counteract the hangmanCount++ below
+            currentLetters[i] = guessedLetter;
+            console.log('Nice one! ' + guessedLetter + ' is in there.');
+            console.log('Current Progress: ' + currentLetters.join(''));
+            if(!currentLetters.includes('_')){
+                console.log('Congrats! You won.');
+            }
+            break;
+        }
+    }
+    guesses.push(guessedLetter);
+    hangmanCount++;
+    if(hangmanCount === 6){
+        console.log('GAME OVER');
+        console.log('You killed him!')
+        console.log('  ================')
+        console.log('  |             []');
+        console.log('  |             []');
+        console.log(' ( )            []');
+        console.log('/ | \\           []');
+        console.log('  |             []');
+        console.log('  |             []');
+        console.log(' / \\            []');
+        console.log('/   \\           []');
+        console.log('                []');
+        console.log('               //\\\\');
+        console.log('              //  \\\\');
+        console.log('             //    \\\\');
+    }
+}
+
