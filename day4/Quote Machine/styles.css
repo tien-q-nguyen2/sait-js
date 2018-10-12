@@ -28,6 +28,29 @@ header {
     height: 900px;
 }
 
+/* .button-container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 30px;
+}
+
+.button-container img {
+    width: 60px;
+} */
+
+.quote-nav {
+    display: flex;
+    align-items: center;
+
+    background: rgb(252,188,128);
+}
+
+.quote-nav img {
+    width: 60px;
+
+    color: rgb(252,188,128);
+}
+
 header h1 {
     margin: 0;
     text-align: center;
@@ -38,7 +61,6 @@ header h1 {
 
 .quote-container {
     background: rgb(234,150,116);
-    max-width: 800px;
     color: #333;
 
     padding: 80px 60px;
