@@ -1,23 +1,20 @@
 quotes = [];
 authors = [];
 
-quotes.push("I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.");
-authors.push("Maya Angelou");
+quotes.push("Repetition is the mother of learning, the father of action, which makes it the architect of accomplishment.");
+authors.push("Zig Ziglar");
 
 quotes.push("To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.");
 authors.push("Ralph Waldo Emerson");
 
-quotes.push("Be who you are and say what you feel, because those who mind don't matter, and those who matter don't mind.");
-authors.push("Bernard M. Baruch");
+quotes.push("Everything you can imagine is real.");
+authors.push("Pablo Picasso");
 
 quotes.push("Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.");
 authors.push("Albert Einstein");
 
 quotes.push("In three words I can sum up everything I've learned about life: it goes on.");
 authors.push("Robert Frost");
-
-// quotes.push("I believe that everything happens for a reason. People change so that you can learn to let go, things go wrong so that you appreciate them when they're right, you believe lies so you eventually learn to trust no one but yourself, and sometimes good things fall apart so better things can fall together.");
-// authors.push("Marilyn Monroe");
 
 quotes.push("It is better to be hated for what you are than to be loved for what you are not.");
 authors.push("Andre Gide, in Autumn Leaves");
@@ -28,12 +25,14 @@ authors.push("William Shakespeare, in As You Like It");
 var quoteElement = document.getElementById('quote');
 var authorElement = document.getElementById('author');
 
-function displayQuote(index){
-    quoteElement.innerText = quotes[index];
-    authorElement.innerText = '~ ' + authors[index] + ' ~';
-}
+var intervalTimerId = setInterval(getNextQuote, 30000);
 
-var nextQuoteIndex = 0;
+function displayQuote(index){
+    clearInterval(intervalTimerId);
+    intervalTimerId = setInterval(getNextQuote, 30000);
+    quoteElement.innerHTML = '<p>' + quotes[index] + '</p>';
+    authorElement.innerHTML = '<p>~ ' + authors[index]+ '</p>';
+}
 
 function getNextQuote(){
     displayQuote(nextQuoteIndex);
@@ -43,7 +42,25 @@ function getNextQuote(){
     }
 }
 
+function getPreviousQuote(){
+    nextQuoteIndex--;
+    if(nextQuoteIndex === -1) {
+        nextQuoteIndex = quotes.length - 1;
+    }
+    if(nextQuoteIndex === 0) {
+        displayQuote(quotes.length - 1);
+    } else {
+        displayQuote(nextQuoteIndex - 1);
+    }
+}
+
+//At the start of the Quote Machine
+var nextQuoteIndex = 0;
 displayQuote(0);
 nextQuoteIndex++;
 
-setInterval(getNextQuote, 2000);
+var nextButton = document.getElementById('next-button');
+nextButton.addEventListener("click", getNextQuote);
+
+var backButton = document.getElementById('back-button');
+backButton.addEventListener("click", getPreviousQuote);

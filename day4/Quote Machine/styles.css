@@ -1,54 +1,69 @@
-/* rgb(139,75,98)
-rgb(187,111,107)
-rgb(234,150,116)
-rgb(252,188,128)
-rgb(247,226,156) */
-
 body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 1200px;
 
     margin: 0 auto;
-    padding: 0 100px;
 
-    background-color: rgb(187,111,107);
-    font-family: 'Exo 2', sans-serif;
-    font-size: 1.5em;
+    background-color: grey;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.4em;
+
+    background: 
+    linear-gradient(
+    180deg, 
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.2)),
+    url('keith-hardy-214817-unsplash.jpg');
+    
+    background-position: center;
 }
 
 header {
     font-family: 'Cinzel Decorative', cursive;
     color: rgb(247,226,156);
     font-size: 0.8em;
+
+    margin-top: 50px;
 }
 
 .main-content {
-    width: 80%;
-    height: 900px;
+    width: 100%;
 }
-
-/* .button-container {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 30px;
-}
-
-.button-container img {
-    width: 60px;
-} */
 
 .quote-nav {
     display: flex;
     align-items: center;
+    justify-content: center;
 
     background: rgb(252,188,128);
 }
 
-.quote-nav img {
-    width: 60px;
+.quote-nav a {
+    display: inline-block;
+    padding: 0 1px;
+    width: 55px;
+    text-align: center;
+    border: 2px rgb(139,75,98) solid;
 
-    color: rgb(252,188,128);
+    font-family: 'Cinzel Decorative', cursive;
+    text-decoration: none;
+    color: rgb(139,75,98);
+    height: 100%;
+    
+    transition-duration: 0.3s;
+}
+
+.quote-nav h2 {
+    display: inline-block;
+    height: 100%;
+}
+
+.quote-nav a:hover {
+    background: rgba(139,75,98,0.8);
+    color: white;
+    border-color: white;
 }
 
 header h1 {
@@ -60,27 +75,78 @@ header h1 {
 }
 
 .quote-container {
+    width: 90%;
+    display: inline-block;
     background: rgb(234,150,116);
     color: #333;
 
     padding: 80px 60px;
+    transform: rotate3d(0, 1, 0, 0deg);
+    transition-duration: 2s;
+}
+
+.quote-container:hover {
+    transform: rotate3d(0.1, 1, 0.1, -360deg);
+}
+
+/* .quote-slide-out {
+    transform: rotate3d(0, 1, 0, 90deg);
+    background: rgb(117,75,58);
+}
+
+.quote-slide-in {
+    transform: rotate3d(0, 1, 0, 90deg);
+    background: rgb(117,75,58);
+} */
+
+#quote {
+    height: 200px;
+    background: rgba(255,255,255,0.2);
+    padding: 10px 30px;
+}
+
+#author {
+    height: 50px;
+    padding: 0 20px;
+}
+
+@media screen and (max-width: 1100px) {
+    .main-content {
+        width: 100%;
+    }
+    #quote {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        padding: 0;
+    }
+    header {
+        font-size: 0.7em;
+    }
+    header h1 {
+        padding: 20px 50px;
+    }
 }
 
 @media screen and (max-width: 800px) {
-    .main-content {
-        width: 90%;
+    body {
+        font-size: 1.3em;
+    }
+    .quote-container {
+        padding: 80px 40px;
     }
 }
 
 @media screen and (max-width: 700px) {
     body {
-        padding: 0 60px;
-        font-size: 1.4em;
+        padding: 0;
     }
     .main-content {
         width: 100%;
     }
-
     header h1 {
         padding: 20px 50px;
     }
@@ -93,19 +159,39 @@ header h1 {
 }
 
 @media screen and (max-width: 500px) {
-    body {
-        padding: 0;
-    }
-
     header {
         font-size: 0.6em;
     }
-
     header h1 {
-        padding: 20px;
+        padding: 25px;
     }
-
     .quote-container {
-        padding: 80px 20px;
+        padding: 80px 0;
+    }
+    .quote-nav a {
+        width: 50px;
+    }    
+}
+
+@media screen and (max-width: 400px){
+    .quote-nav a {
+        width: 40px;
+    }    
+    #quote {
+        height: 300px;
+        padding: 10px 20px;
     }
 }
+
+@media screen and (max-width: 300px){
+    .quote-nav a {
+        width: 35px;
+    }    
+    body {
+        font-size: 1.2em;
+    }
+    #quote {
+        padding: 10px 15px;
+    }
+}
+
