@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 1200px;
+    max-width: 1000px;
 
     margin: 0 auto;
 
@@ -16,7 +16,6 @@ body {
     rgba(0,0,0,0.2),
     rgba(0,0,0,0.2)),
     url('keith-hardy-214817-unsplash.jpg');
-    
     background-position: center;
 }
 
@@ -40,7 +39,7 @@ header {
     background: rgb(252,188,128);
 }
 
-.quote-nav a {
+.quote-nav > a {
     display: inline-block;
     padding: 0 1px;
     width: 55px;
@@ -60,7 +59,7 @@ header {
     height: 100%;
 }
 
-.quote-nav a:hover {
+.quote-nav > a:hover {
     background: rgba(139,75,98,0.8);
     color: white;
     border-color: white;
@@ -80,24 +79,20 @@ header h1 {
     background: rgb(234,150,116);
     color: #333;
 
-    padding: 80px 60px;
-    transform: rotate3d(0, 1, 0, 0deg);
-    transition-duration: 2s;
+    padding: 60px;
 }
 
-.quote-container:hover {
-    transform: rotate3d(0.1, 1, 0.1, -360deg);
+#quote-index {
+    height: 28px;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+    width: 100%;
 }
 
-/* .quote-slide-out {
-    transform: rotate3d(0, 1, 0, 90deg);
-    background: rgb(117,75,58);
+#quote-index p {
+    margin: 0;
+    text-align: center;
 }
-
-.quote-slide-in {
-    transform: rotate3d(0, 1, 0, 90deg);
-    background: rgb(117,75,58);
-} */
 
 #quote {
     height: 200px;
@@ -106,17 +101,23 @@ header h1 {
 }
 
 #author {
-    height: 50px;
-    padding: 0 20px;
+    height: 30px;
+    padding: 10px 30px;
 }
 
-@media screen and (max-width: 1100px) {
-    .main-content {
-        width: 100%;
-    }
-    #quote {
-        height: 250px;
-    }
+#author p {
+    margin: 0;
+}
+
+#twitter-share-button {
+    position: absolute;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+#twitter-share-button img {
+    width: 50px;
+    height: 50px;
 }
 
 @media screen and (max-width: 900px) {
@@ -136,7 +137,7 @@ header h1 {
         font-size: 1.3em;
     }
     .quote-container {
-        padding: 80px 40px;
+        padding: 60px 40px;
     }
 }
 
@@ -150,11 +151,17 @@ header h1 {
     header h1 {
         padding: 20px 50px;
     }
+    #quote {
+        height: 220px;
+    }
 }
 
 @media screen and (max-width: 600px) {
     header {
         font-size: 0.7em;
+    }
+    #quote {
+        height: 260px;
     }
 }
 
@@ -166,11 +173,14 @@ header h1 {
         padding: 25px;
     }
     .quote-container {
-        padding: 80px 0;
+        padding: 60px 0;
     }
     .quote-nav a {
         width: 50px;
     }    
+    #author {
+        height: 40px;
+    }
 }
 
 @media screen and (max-width: 400px){
@@ -193,5 +203,39 @@ header h1 {
     #quote {
         padding: 10px 15px;
     }
+    #author {
+        height: 50px;
+    }
 }
 
+.disappear-left {
+    position: relative;
+    animation: disappear-left 0.4s;
+}
+@keyframes disappear-left {
+    from { left: 0 } to { left: -100vw; }  
+}
+
+.disappear-right {
+    position: relative;
+    animation: disappear-right 0.4s;
+}
+@keyframes disappear-right {
+    from { right: 0; } to { right: -100vw; }  
+}
+
+.appear-right {
+    position: relative;
+    animation: appear-right 0.4s;
+}
+@keyframes appear-right {
+    from { right: -100vw; } to { right:0; }
+}
+
+.appear-left {
+    position: relative;
+    animation: appear-left 0.4s
+}
+@keyframes appear-left {
+    from { left: -100vw; } to { left:0; }
+}
