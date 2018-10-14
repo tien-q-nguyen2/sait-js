@@ -40,7 +40,7 @@ function displayQuote(indexToDisplay){
         delayBeforeQuoteChange = 400;
     }
     setTimeout(function(){
-        var currQuoteNum = nextQuoteIndex;
+        var currQuoteNum = nextQuoteIndex; //curr stands for current
         if(currQuoteNum === 0){
             currQuoteNum = quotes.length;
         }
@@ -51,8 +51,8 @@ function displayQuote(indexToDisplay){
         //Every time a new quote is displayed, update the Twitter message to send
         twitterButton.href = "https://twitter.com/intent/tweet?text=" +
             'I got this great quote from the Quote Machine! Check it out: "' +
-            quotes[indexToDisplay].split(' ').join('+') + '" ~ by ' + 
-            authors[indexToDisplay];
+            quotes[indexToDisplay].split(' ').join('+').replace(/;/g, ',') + 
+            '" ~ by ' + authors[indexToDisplay];
 
     }, delayBeforeQuoteChange);
 }

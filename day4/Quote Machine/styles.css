@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     align-items: center;
     max-width: 1000px;
+    height: 1000px;
 
     margin: 0 auto;
 
@@ -13,10 +14,10 @@ body {
     background: 
     linear-gradient(
     180deg, 
-    rgba(0,0,0,0.2),
-    rgba(0,0,0,0.2)),
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.25)),
     url('keith-hardy-214817-unsplash.jpg');
-    background-position: center;
+    background-position: 50% 45%;
 }
 
 header {
