@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day 5</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- <p>This is my in-class JavaScript code for Day 5.</p> -->
+    <h1></h1>
+    <form id="userForm" name='userForm'>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName"/>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName"/>
+        <label for='email'>Email:</label>
+        <input type='email' id="email">
+
+        <input type="submit" name="submitButton"/>
+    </form>
+
+    <form id="userForm2" name="userForm2">
+        <fieldset id="userForm2" name='userForm2'>
+            <legend>Choose some equipment for your robot</legend>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="guns" checked>
+                <label for="guns">Guns</label>
+            </div>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="underpants">
+                <label for="underpants">Underpants</label>
+            </div>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="lawnmower">
+                <label for="lawnmower">Lawnmover</label>
+            </div>
+        </fieldset>
+    </form>
+
+    <form id="userForm3" name="userForm3">
+        <label for="choose">Would you prefer a banana or cherry?</label>
+        <input id="choose" name="i_like" required>
+        <button>Submit1</button>
+        <button>Submit2</button>
+    </form>
+
+    <form id="userForm4" name="userForm4">
+        <label for="choose2">Would you prefer a banana or cherry?</label>
+        <input id="choose2" name="i_like2" pattern="banana|cherry" required>
+        <button>Submit</button>
+    </form>
+
+    <form id="userForm5" name="userForm5">
+        <div>
+            <label for="choose">Would you prefer a banana or cherry?</label>
+            <input id="choose" name="i_like" required minlength="6" maxlength="6">
+        </div>
+        <div>
+            <label for="number">How many would you like?</label>
+            <input type="number" id="number" name="amount" value="1" min='1' max='10'>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <form id="userForm5" name="userForm5">
+        <div>
+            <label for="choose">Would you prefer a banana or cherry?</label>
+            <input id="choose" name="i_like" required minlength="6" maxlength="6">
+        </div>
+        <div>
+            <label for="number">How many would you like?</label>
+            <input type="number" id="number" name="amount" value="1" min='1' max='10'>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+
+    <form id="userForm6" name="userForm6">
+        <!-- <input type="email" required>
+        <button>Submit</button> -->
+        <input type="email" placeholder="email@sait.ca" pattern=".+@sait.ca"
+        size='30' required name="email" title="Must be a sait.ca email address" />
+        <button>Submit</button>
+    </form>
+
+    <form id="userForm7" name="userForm7">
+        <label for="animal">What is your spirit animal?</label>
+        <input type="text" id='animal' name='animal' required>
+        <label for="self-describe">Desribe yourself in 3 words</label>
+        <input type="text" id='self-describe' name='self-describe' required>
+        <label for="millions">How many millions CAD would you like to have?</label>
+        <input type="number" id='millions' name='millions' value="1" min='1' max='1000' required>
+        <button>Submit</button>
+    </form>
+
+    <form id="userForm8" name="userForm8">
+        <div>
+            Please enter the following details:
+            <p>
+                Name: <input type="text" id="txtName" name="txtName">
+            </p>
+            <p>
+                Age: <input type="text" id="txtAge" name="txtAge">
+            </p>
+            <p>
+                <input type="submit" id="submit" value="Submit" name="submit">
+            </p>
+        </div>
+        <div>
+            <p id="errorName" style="display:none;">Please enter your name.</p>
+            <p id="errorAge" style="display:none;">Please enter your age.</p>
+            <p id="errorTooYoung" style="display:none;">You're not 18+ yet. Go away.</p>
+        </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

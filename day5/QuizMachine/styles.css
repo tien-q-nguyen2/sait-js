@@ -1,0 +1,247 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    height: 1000px;
+
+    margin: 0 auto;
+
+    background-color: grey;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.4em;
+
+    background:
+    linear-gradient(
+    180deg, 
+    rgba(0,0,0,0.25),
+    rgba(215,216,122,0.25)),
+    url('joanna-nix-384296-unsplash.jpg');
+    background-position: 50% 45%;
+}
+
+header {
+    font-family: 'Mali', cursive;
+    color: #e1e6a4;
+    font-size: 0.8em;
+
+    margin-top: 100px;
+}
+
+header h1 {
+    margin: 0;
+    text-align: center;
+    padding: 20px 60px;
+
+    background: #678848; 
+    /* #e1e6a4 b6bd1c e6ece0 d7d87a 678848*/
+}
+
+.main-content {
+    width: 100%;
+}
+
+.question-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #e1e6a4;
+}
+
+.question-nav > a {
+    display: inline-block;
+    padding: 0 1px;
+    width: 55px;
+    text-align: center;
+    border: 2px #678848 solid;
+
+    font-family: 'Mali', cursive;
+    text-decoration: none;
+    color: #678848;
+    height: 100%;
+    
+    transition-duration: 0.3s;
+}
+
+.question-nav h2 {
+    display: inline-block;
+    height: 100%;
+}
+
+.question-nav > a:hover {
+    background: rgba(103,136,72,0.7);
+    color: #e6ece0;
+    border-color: #b6bd1c;
+}
+
+.question-container {
+    width: 90%;
+    display: inline-block;
+    background: #d7d87a;
+    color: #333;
+
+    padding: 40px 60px 60px;
+}
+
+#question-index {
+    height: 28px;
+    margin: 0 auto;
+    padding: 0 0 30px 0;
+    width: 100%;
+}
+
+#question-index p {
+    margin: 0;
+    text-align: center;
+}
+
+#question {
+    height: 200px;
+    background: rgba(182,189,28,0.4);
+    padding: 10px 30px;
+}
+
+#submit {
+
+}
+
+/* #author {
+    height: 30px;
+    padding: 10px 30px;
+}
+
+#author p {
+    margin: 0;
+} */
+
+#twitter-share-button {
+    position: absolute;
+    margin-left: 10px;
+    opacity: 0;
+}
+
+#twitter-share-button img {
+    width: 50px;
+    height: 50px;
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        padding: 0;
+    }
+    header {
+        font-size: 0.7em;
+    }
+    header h1 {
+        padding: 20px 50px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+        font-size: 1.3em;
+    }
+    .question-container {
+        padding: 60px 40px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    body {
+        padding: 0;
+    }
+    .main-content {
+        width: 100%;
+    }
+    header h1 {
+        padding: 20px 50px;
+    }
+    #question {
+        height: 220px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header {
+        font-size: 0.7em;
+    }
+    #question {
+        height: 260px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        font-size: 0.6em;
+    }
+    header h1 {
+        padding: 25px;
+    }
+    .question-container {
+        padding: 60px 0;
+    }
+    .question-nav a {
+        width: 50px;
+    }    
+    /* #author {
+        height: 40px;
+    } */
+}
+
+@media screen and (max-width: 400px){
+    .question-nav a {
+        width: 40px;
+    }    
+    #question {
+        height: 300px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 300px){
+    .question-nav a {
+        width: 35px;
+    }    
+    body {
+        font-size: 1.2em;
+    }
+    #question {
+        padding: 10px 15px;
+    }
+    /* #author {
+        height: 50px;
+    } */
+}
+
+.disappear-left {
+    position: relative;
+    animation: disappear-left 0.5s;
+}
+@keyframes disappear-left {
+    from { left: 0 } to { left: -100vw; }  
+}
+
+.disappear-right {
+    position: relative;
+    animation: disappear-right 0.5s;
+}
+@keyframes disappear-right {
+    from { right: 0; } to { right: -100vw; }  
+}
+
+.appear-right {
+    position: relative;
+    animation: appear-right 0.5s;
+}
+@keyframes appear-right {
+    from { right: -100vw; } to { right:0; }
+}
+
+.appear-left {
+    position: relative;
+    animation: appear-left 0.5s
+}
+@keyframes appear-left {
+    from { left: -100vw; } to { left:0; }
+}

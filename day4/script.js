@@ -164,8 +164,8 @@
 // setInterval(animateWalk, 50);
 
 function Mario(marioIndex){
-    var mDirection = 20;
-    var mVerDirection = 20;
+    var marioSpeed_X = 20;
+    var marioSpeed_Y = 20;
     document.write('<img id="mario' + marioIndex +'"></img>')
     var myImg = document.getElementById('mario' + marioIndex);
     myImg.src = 'gif/mario2.gif';
@@ -180,7 +180,7 @@ function Mario(marioIndex){
 
         var currentLeft = parseInt(img.style.left);
 
-        img.style.left = (currentLeft + mDirection) + 'px';
+        img.style.left = (currentLeft + marioSpeed_X) + 'px';
     
         var rightBound = window.innerWidth - img.width;
         // var rightBound = 1000;
@@ -188,27 +188,27 @@ function Mario(marioIndex){
         // var bottomBound = 1000;
         if (currentLeft > rightBound) {
             img.style.transform = 'scaleX(-1)';
-            mDirection = -mVerDirection + Math.round(Math.random() * 5 - 2.5);
-            img.style.left = (currentLeft + mDirection) + 'px';
+            marioSpeed_X = -marioSpeed_Y + Math.round(Math.random() * 5 - 2.5);
+            img.style.left = (currentLeft + marioSpeed_X) + 'px';
         }
     
         else if (currentLeft < 0){
             img.style.transform = 'scaleX(1)';
-            mDirection = -mDirection + Math.round(Math.random() * 5 - 2.5);
-            img.style.left = (currentLeft + mDirection) + 'px';
+            marioSpeed_X = -marioSpeed_X + Math.round(Math.random() * 5 - 2.5);
+            img.style.left = (currentLeft + marioSpeed_X) + 'px';
         }
     
         var currentTop = parseInt(img.style.top);
-        img.style.top = (currentTop + mVerDirection) + 'px';
+        img.style.top = (currentTop + marioSpeed_Y) + 'px';
     
         if (currentTop > bottomBound) {
-            mVerDirection = -mVerDirection + Math.round(Math.random() * 5 - 2.5);
-            img.style.top = (currentTop + mVerDirection) + 'px';
+            marioSpeed_Y = -marioSpeed_Y + Math.round(Math.random() * 5 - 2.5);
+            img.style.top = (currentTop + marioSpeed_Y) + 'px';
         }
     
         else if (currentTop < 0){
-            mVerDirection = -mVerDirection + Math.round(Math.random() * 5 - 2.5);
-            img.style.top = (currentTop + mVerDirection) + 'px';
+            marioSpeed_Y = -marioSpeed_Y + Math.round(Math.random() * 5 - 2.5);
+            img.style.top = (currentTop + marioSpeed_Y) + 'px';
         }
     }
 }
