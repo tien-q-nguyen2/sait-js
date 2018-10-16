@@ -260,7 +260,13 @@ displayQuestion(0);
 nextQuestionIndex++;
 
 var nextButton = document.getElementById('next-button');
-nextButton.addEventListener("click", getNextQuestion);
+nextButton.addEventListener("click", function(event){
+    event.preventDefault();
+    getNextQuestion()
+});
 
 var backButton = document.getElementById('back-button');
-backButton.addEventListener("click", getPreviousQuestion);
+backButton.addEventListener("click", function(event){
+    event.preventDefault();
+    getPreviousQuestion()
+});
