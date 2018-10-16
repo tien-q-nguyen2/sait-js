@@ -62,7 +62,7 @@ questions.push(
     '<p>var str1 = "Winter is pretty awesome."</p>'+
     '<div>'+
     '<label>str1.'+
-    '<input id="quiz" name="quiz" required maxlength="17">'+
+    '<input id="quiz" name="quiz" required maxlength="16">'+
     '</label>'+
     '</div>'
 );

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<!-- <html>
 <head>
     <title>Day 6</title>
 </head>
@@ -67,16 +67,20 @@
 
     </script>
 </body>
-</html>
+</html> -->
 
-<!-- <html>
+<html>
   <head>
     <meta charset="utf-8">
    <title>Video Watcher</title>
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>');
+    </script>
+    
     <div class="container">
  
     <div class="row">
@@ -98,13 +102,15 @@
 
     <script type="text/javascript" src="js/youtube.js"></script>
     <script>
-        var allLinks = document.querySelectorAll('a');
+        // var allLinks = document.querySelectorAll('a');
+        var allLinks = $('a');
+
         for (var i = 0; i < allLinks.length; i++) {
             var currentLink = allLinks[i];
-            var currentHref = currentLink.getAttribute('href');
+            var currentHref = $(currentLink).attr('href');
             var thumbnailUrl = youtube.generateThumbnailUrl(currentHref);
-            var imageElement = document.createElement('img');
-            imageElement.setAttribute('src', thumbnailUrl);
+            var imageElement = $(currentLink).$('<img></img>');
+            imageElement.attr('src', thumbnailUrl);
             currentLink.appendChild(imageElement);
 
             currentLink.style.display = 'flex';
@@ -120,4 +126,4 @@
         unorderedList.style.flexWrap = 'wrap';
     </script>
   </body>
-</html> -->
+</html>
