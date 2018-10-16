@@ -38,6 +38,33 @@
             var link = $(this);
             link.text(link.text() + '!');
         })
+
+        //Instructor code
+        $(document).ready(function() {
+            var links = $('a');
+
+            links.each(function() {
+                var link = $(this);
+
+                link.text(link.text() + '!');
+            })
+        });
+
+        //Alternatively
+        function loopThroughList() {
+            var links = $('a');
+
+            links.each(function() {
+                var link = $(this);
+
+                link.text(link.text() + '!');
+            })
+        }
+        $(document).ready(function() {
+            loopThroughList();
+        });
+        $(loopThroughList);
+
     </script>
 </body>
 </html>
