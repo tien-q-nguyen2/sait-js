@@ -1,8 +1,29 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html>
 <head>
     <title>Day 6</title>
+    <style>
+        .alert {
+            color: red;
+        }
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: rebeccapurple;
+            position: absolute;
+            left: 0;
+            top: 100;
+        }
+        #wildbox {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+            position: absolute;
+            left: 0;
+            top: 100;
+        }
+    </style>
 </head>
 <body>
     <p>This is my in-class JavaScript code for Day 6.</p>
@@ -15,6 +36,27 @@
         </ul>
     </div>
     <a href="http://www.google.com">Google</a>
+    <form id="userForm2" name="userForm2">
+        <fieldset id="userForm2" name='userForm2'>
+            <legend>Choose some equipment for your robot</legend>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="guns" checked>
+                <label for="guns">Guns</label>
+            </div>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="underpants">
+                <label for="underpants">Underpants</label>
+            </div>
+            <div>
+                <input type="checkbox" id="" name="equipment" value="lawnmower">
+                <label for="lawnmower">Lawnmover</label>
+            </div>
+            <button>Submit</button>
+        </fieldset>
+    </form>
+    <p id="error">This is an error</p>
+    <div id='square'></div>
+    <div id='wildbox'></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.0/math.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -32,6 +74,28 @@
         $('a').html('Yahoo!')
         $('a').attr('href', 'http://www.yahoo.com')
         $('a').css({'color': 'red'})
+        $('#error').hide();
+        $('#error').fadeIn(5000);
+        $('#error').show(1000, function(){
+            $(this).addClass('alert');
+        });
+        
+        $('#square').animate({
+            opacity: 0.25,
+            left:"+50"
+        }, 5000, function() {
+
+        });
+
+        $('#wildbox').animate({
+            width: '200px',
+            left:"+500"
+        }, 1000, function() {
+            $('#wildbox').animate({
+                width: '20px',
+                top:"+600"
+            }, 1000, function(){})
+        });
         
         var links = $('li');
         links.each(function() {
@@ -40,6 +104,8 @@
         })
 
         $(document).on('keypress', function(){
+            // console.log(event);
+            // console.log(event.which);
             console.log(event.key);
         })
 
@@ -50,12 +116,9 @@
             console.log(event.target);
         })
 
-        $('a').on('click', function(event){
+        $('form button').on('click', function(event){
             event.preventDefault();
-            console.log('You clicked on a link item');
-            console.log(event);
-            console.log(event.which);
-            console.log(event.target);
+            console.log('Not submitting the form!');
         })
 
         // //Instructor code
@@ -85,7 +148,7 @@
 
     </script>
 </body>
-</html>
+</html> -->
 
 <!-- <html>
   <head>
@@ -169,3 +232,76 @@
     </script>
   </body>
 </html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+   <title>Exercise 3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+    <div class="row">
+      <div class="span12">
+        <h1 class="page-header">Let's Play with Events!</h1>
+      </div>
+    </div>
+ 
+    <div class="row">
+      <div class="span3">
+        <button>Random Button</button>
+        <hr />
+        <form>
+            <div id='banner1'></div>
+            <div id='banner2'></div>
+          <fieldset>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" />
+          </fieldset>
+          <fieldset>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" />
+          </fieldset>
+          <input type="submit" value="Submit" id='submit'>
+        </form>
+       </div>
+     </div>
+    </div>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+
+      $(document).ready(function(){
+        $('.span3 > button').on('click', function(){
+            $(document.body).css('background','lightblue');
+
+            var counter = $('<p id="counter" style="display: inline;">0</p>');
+            counter.css('margin-left', '50px');
+            $('.span3 > button').after(counter);
+            setInterval(function(){
+                var currentCount = parseInt(counter.html());
+                currentCount++;
+                counter.html(currentCount);
+            } , 1000)
+        })
+
+        var banner1 = $('#banner1');
+        var banner2 = $('#banner2');
+        banner1.css('color','red').css('margin-bottom', '20px');
+        banner2.css('color','red').css('margin-bottom', '20px');
+        $('#submit').on('click', function(event){
+            event.preventDefault();
+            banner1.hide();
+            banner2.hide();
+            var bannerMessage = '';
+            if ($('#first-name').val() === ''){
+                banner1.html('First name needs to be filled in!').fadeIn(1000);
+            }
+            if ($('#last-name').val() === ''){
+                banner2.html('Last name needs to be filled in!').fadeIn(1000);
+            }
+        })
+      });
+    </script>
+  </body>
+</html>
