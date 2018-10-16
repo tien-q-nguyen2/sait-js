@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<!-- <html>
+<html>
 <head>
     <title>Day 6</title>
 </head>
@@ -39,37 +39,55 @@
             link.text(link.text() + '!');
         })
 
-        //Instructor code
-        $(document).ready(function() {
-            var links = $('a');
+        $(document).on('keypress', function(){
+            console.log(event.key);
+        })
 
-            links.each(function() {
-                var link = $(this);
+        $('li').on('click', function(event){
+            console.log('You clicked on a list item');
+            console.log(event);
+            console.log(event.which);
+            console.log(event.target);
+        })
 
-                link.text(link.text() + '!');
-            })
-        });
+        $('a').on('click', function(event){
+            event.preventDefault();
+            console.log('You clicked on a link item');
+            console.log(event);
+            console.log(event.which);
+            console.log(event.target);
+        })
 
-        //Alternatively
-        function loopThroughList() {
-            var links = $('a');
+        // //Instructor code
+        // $(document).ready(function() {
+        //     var links = $('a');
 
-            links.each(function() {
-                var link = $(this);
+        //     links.each(function() {
+        //         var link = $(this);
+        //         link.text(link.text() + '!');
+        //     })
+        // });
 
-                link.text(link.text() + '!');
-            })
-        }
-        $(document).ready(function() {
-            loopThroughList();
-        });
-        $(loopThroughList);
+        // //Alternatively
+        // function loopThroughList() {
+        //     var links = $('a');
+
+        //     links.each(function() {
+        //         var link = $(this);
+
+        //         link.text(link.text() + '!');
+        //     })
+        // }
+        // $(document).ready(function() {
+        //     loopThroughList();
+        // });
+        // $(loopThroughList);
 
     </script>
 </body>
-</html> -->
+</html>
 
-<html>
+<!-- <html>
   <head>
     <meta charset="utf-8">
    <title>Video Watcher</title>
@@ -103,19 +121,43 @@
     <script type="text/javascript" src="js/youtube.js"></script>
     <script>
         // var allLinks = document.querySelectorAll('a');
-        var allLinks = $('a');
+        // for (var i = 0; i < allLinks.length; i++) {
+        //     var currentLink = allLinks[i];
+        //     var currentHref = currentLink.getAttribute('href');
+        //     var thumbnailUrl = youtube.generateThumbnailUrl(currentHref);
+        //     var imageElement = document.createElement('img');
+        //     imageElement.setAttribute('src', thumbnailUrl);
+        //     currentLink.appendChild(imageElement);
 
+        //     currentLink.style.display = 'flex';
+        //     currentLink.style.flexDirection = 'column-reverse';
+        // }
+
+        var allLinks = $('a');
         for (var i = 0; i < allLinks.length; i++) {
             var currentLink = allLinks[i];
             var currentHref = $(currentLink).attr('href');
             var thumbnailUrl = youtube.generateThumbnailUrl(currentHref);
-            var imageElement = $(currentLink).$('<img></img>');
+            var imageElement = $('<img></img>');
             imageElement.attr('src', thumbnailUrl);
-            currentLink.appendChild(imageElement);
+            $(currentLink).append(imageElement);
 
             currentLink.style.display = 'flex';
             currentLink.style.flexDirection = 'column-reverse';
         }
+
+        //Instructor's solution
+        // var links = $('a');
+        // links.each(function() {
+        //     var link = $(this);
+        //     var href = link.attr('href');
+        //     var thumbnail = youtube.generateThumbnailUrl(href);
+        //     var img = $('<img src=' + thumbnail + '>');
+        //     link.append(img);
+        // });
+        // links.each(function() {
+        //     $(this).append($('<img src=' + youtube.generateThumbnailUrl($(this).attr('href')) + '>'))
+        // })
 
         var unorderedList = document.querySelectorAll('ul')[0];
         unorderedList.style.display = 'flex';
@@ -126,4 +168,4 @@
         unorderedList.style.flexWrap = 'wrap';
     </script>
   </body>
-</html>
+</html> -->
