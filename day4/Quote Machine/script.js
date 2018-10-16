@@ -112,10 +112,16 @@ displayQuote(0);
 nextQuoteIndex++;
 
 var nextButton = document.getElementById('next-button');
-nextButton.addEventListener("click", getNextQuote);
+nextButton.addEventListener("click", function(event){
+    event.preventDefault();
+    getNextQuote();
+});
 
 var backButton = document.getElementById('back-button');
-backButton.addEventListener("click", getPreviousQuote);
+backButton.addEventListener("click", function(event){
+    event.preventDefault();
+    getPreviousQuote()
+});
 
 var twitterButton = document.getElementById('twitter-share-button');
 quoteContainer.addEventListener("mouseover", function() {

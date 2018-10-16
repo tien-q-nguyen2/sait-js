@@ -7,8 +7,14 @@
 <body>
     <p>This is my in-class JavaScript code for Day 6.</p>
     <div class='main'>
-        <p id='special-p'></p>
+        <p id='special-p'></p>    
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
     </div>
+    <a href="http://www.google.com">Google</a>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.2.0/math.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -22,6 +28,16 @@
         console.log(matrix3);
 
         console.log($('.main #special-p'));
+        
+        $('a').html('Yahoo!')
+        $('a').attr('href', 'http://www.yahoo.com')
+        $('a').css({'color': 'red'})
+        
+        var links = $('li');
+        links.each(function() {
+            var link = $(this);
+            link.text(link.text() + '!');
+        })
     </script>
 </body>
 </html>
