@@ -73,7 +73,7 @@ questions.push(
     '<p>Fill in the blank below:</p>'+
     '<div>'+
     '<label>for(var i = 0; i <= '+
-    '<input id="quiz" name="quiz" required maxlength="20">'+
+    '<input id="quiz" name="quiz" required maxlength="17">'+
     '; i++)'+
     '</label>'+
     '</div>'
