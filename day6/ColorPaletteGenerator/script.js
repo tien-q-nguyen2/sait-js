@@ -1,3 +1,5 @@
+new ClipboardJS('.copy-hex');
+
 $("form").submit(function(e){
     e.preventDefault();
 });
@@ -58,7 +60,8 @@ $('#submit').on('click', function(event){
         palette.css('visibility','visible').empty();
 
         for(var i = 0; i < colorCount; i++){
-            var color = $('<div class="color"></div>');
+            var color = $('<a class="copy-hex" data-clipboard-text="' + generatedColors[i] +
+                        '"><div class="color"></div></a>');
             color.css('background', generatedColors[i]);
             palette.append(color);
             color.hide();
