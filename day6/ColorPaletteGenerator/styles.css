@@ -73,6 +73,10 @@ header h1 {
     color: #ccc;
 }
 
+*[disabled]{
+    background: #999;
+}
+
 label {
     margin-bottom: 10px;
     display: inline-block;
