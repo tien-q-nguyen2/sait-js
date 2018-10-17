@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lyrics Searcher</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alice" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class='page-wrapper'>
+        <div class='centered'>
+            <form id='get-lyrics-form'>
+                <legend><h1>Get your lyrics now!</h1></legend>
+                <label for="artist">Artist
+                    <input type="text" id="artist" value='Green Day' required>
+                </label>
+                <label for="title">Song Title
+                    <input type="text" id="title" value='Burnout' required>
+                </label>
+                <input type="submit" id="submit" value="Search Lyrics">
+            </form>
+        </div>
+        <div class='banner'>
+            <h1>The Lyrics Machine</h1>
+        </div>
+        <div class='centered song-container'>
+            <div id='song-and-author'></div>
+            <div id='lyrics-display'></div>
+        </div>
+    </div>
+
+    <script>
+        var submitButton = document.getElementById('submit');
+
+        submitButton.addEventListener('click', function(event){
+            event.preventDefault();
+
+            var artist = document.getElementById('artist').value;
+            var title = document.getElementById('title').value;
+
+            var songAndAuthor = document.getElementById('song-and-author');
+            var lyricsDisplay = document.getElementById('lyrics-display');
+
+            var myLyrics = '';
+            if (artist !== '' || title !== ''){
+                fetch('https://api.lyrics.ovh/v1/' + artist + '/' + title)
+                .then(function(response) {
+                    return response.json();
+                    if(!response.ok){
+                        throw Error(response.statusText);
+                    }
+                })
+                .then(function(data){
+                    songAndAuthor.innerHTML ='<h2>'+ title+' by '+ artist+'</h2>';
+                    myLyrics = data.lyrics;
+                    myLyrics = myLyrics.replace(/\n/g,'<br/>');
+                    lyricsDisplay.innerHTML = '<p>' + myLyrics + '</p>';
+                })        
+                .catch(function(error) {
+                    songAndAuthor.innerHTML ='<h2>Error getting the lyrics.</h2>';
+                    lyricsDisplay.innerHTML = 
+                    '<p>Check the names of the artist and song before trying again!</p>';
+                })
+            }
+        })
+
+        function getYoutubeVideo(artist, title){
+
+        }
+
+    </script>
+
+</body>
+</html>
