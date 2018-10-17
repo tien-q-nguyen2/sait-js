@@ -4,70 +4,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Color Pa</title>
+    <title>Color Palette</title>
+    <link href="https://fonts.googleapis.com/css?family=Lobster|Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class='page-wrapper'>
         <header><h1>Color Palette Generator</h1></header>
-        <div class='main-content'>
-            <div id='color-hue'>
-                <input type="text" id="color-list"/>
-                <input type="text" id="color-hex-entry"/>
-            </div>
-            <div id='color-luminosity'></div>
-            <input type="number" id="color-num-entry"/>
+            <form class='option-panel' id="controls" name="controls">
+                <div id='hue-input-option'>
+                    <legend>Choose method to give the desired hue</legend>
+                    <label>Drop-down List
+                        <input type="radio" id="hue-list-opt" name='hue-option' value="list" checked>
+                    </label>
+                    <label>Hex Value
+                        <input type="radio" id="hue-hex-opt" name='hue-option' value="hex">
+                    </label>
+                </div>
+
+                <div id='color-hue'>
+                    <select id="color-list" name="color-list"></select>
+                    <input type="text" id="color-hex-entry" class="entry" placeholder="6 hex digits" +
+                        required value='00FFFF' maxlength="6" disabled pattern="[0-9a-fA-F]{6}"/>
+                </div>
+
+                <div>
+                    <legend>Choose color luminosity for the generator</legend>
+                    <select id="color-luminosity"></select>
+                </div>
+
+                <div>
+                    <legend>How many colors to generate? (1-500)</legend>
+                    <input type="number" id="color-num-entry" value=100 class="entry"
+                        required min="1" max="500"/>
+                </div>
+
+                <input type="submit" id='submit' name="submit" value="Generate"/>
+            </form>
             <div id='palette'></div>
-        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.5.2/randomColor.min.js"></script>
-    <script>
-        var color = randomColor(); // a hex code for an attractive color
-        document.body.bgColor = color;
-        // randomColor({hue: 'random',luminosity: 'random',count: 54});
-        colorNames = ['red','orange','yellow','green','blue','purple','pink','monochrome'];
-        
-        // majorColorNames = {
-        //     'red':'#ff0000',
-        //     'cyan':'#00ffff',
-        //     'blue':'#0000ff',
-        //     'darkblue':'#0000a0',
-        //     'lightblue':'#add8e6',
-        //     'purple':'#800080',
-        //     'yellow':'#ffff00',
-        //     'lime':'#00ff00',
-        //     'magenta':'#ff00ff',
-
-        //     'white':'#ffffff',
-        //     'silver':'#c0c0c0',
-        //     'grey':'#808080',
-        //     'black':'#000000',
-        //     'orange':'#ffa500',
-        //     'brown':'#a52a2a',
-        //     'maroon':'#800000',
-        //     'green':'#008000',
-        //     'olive':'#808000'
-        // }
-
-        //Grab the controls (their string values) in the html file
-        var colorCount = parseInt($('#color-entry').val());
-        // console.log(colorCount);
-        colorCount = 100;
-        var colorHue;
-        var colorLuminosity;
-
-        var generatedColors = randomColor({count: colorCount, hue: colorHue,
-                                    luminosity: colorLuminosity});
-        var palette = $('#palette');
-        for(var i = 0; i < colorCount; i++){
-            var color = $('<div class="color"></div>');
-            color.css('background', generatedColors[i]);
-            palette.append(color);
-            console.log(color);
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js"></script>
+    <script src='script.js'></script>
 
 </body>
 </html>
