@@ -1,0 +1,30 @@
+body {
+	font-family: Tahoma, Geneva, Verdana;
+}
+
+.video-choices {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.video-choices li {
+	display: inline-block;
+	margin: 0 1em 0 0;
+	text-align: center;
+}
+
+.video-choices a {
+	background-color: lightskyblue;
+	display: block;
+	padding: 1em;
+}
+
+.video-choices img {
+	display: block;
+	margin: 0 auto 0.5em;
+}
+
+#video-watcher {
+	margin: 1em 0;
+}
