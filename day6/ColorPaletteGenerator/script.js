@@ -28,6 +28,8 @@ $.each(luminosityOptions, function( index, value ){
     $('#color-luminosity').append(luminosityOption);
 });
 
+$('#copied-notification').hide();
+
 //Grab the controls (and their string values) in the html file
 $('#submit').on('click', function(event){
     var palette = $('#palette');
@@ -52,6 +54,7 @@ $('#submit').on('click', function(event){
         }
     }
 
+
     if (!cancelGenerate){
         var colorLuminosity = $('#color-luminosity').val().toLowerCase();
 
@@ -69,5 +72,10 @@ $('#submit').on('click', function(event){
             color.hide();
             color.fadeIn(400 + (200 * i) % 1200);
         }
+        
+        $('.copy-hex').on('click', function() {
+            console.log('here!');
+            $('#copied-notification').finish().slideDown().fadeOut(2000);
+        });
     }
 })

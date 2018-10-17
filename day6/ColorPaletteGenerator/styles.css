@@ -3,6 +3,19 @@ body {
     background: gainsboro;
 }
 
+#copied-notification {
+    position: fixed;
+    height: 40px;
+    width: 240px;
+    background: #ddd;
+    font-family: 'Montserrat', sans-serif;
+    opacity: 0.9;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .page-wrapper {
     display: flex;
     flex-direction: column;
