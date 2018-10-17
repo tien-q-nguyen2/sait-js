@@ -13,7 +13,8 @@ $('#hue-hex-opt').on('click', function(){
     $('#color-list').attr('disabled','');
 });
 
-var colorNames = ['red','orange','yellow','green','blue','purple','pink','monochrome','random'];
+var colorNames = ['red','orange','yellow','green','blue','purple',
+                                    'pink','monochrome','random'];
 $('#color-list').css('text-transform','capitalize');
 $.each(colorNames, function( index, value ){
     var colorOption = $('<option>'+value+'</option>');
@@ -60,7 +61,8 @@ $('#submit').on('click', function(event){
         palette.css('visibility','visible').empty();
 
         for(var i = 0; i < colorCount; i++){
-            var color = $('<a class="copy-hex" data-clipboard-text="' + generatedColors[i] +
+            var color = $('<a class="copy-hex" data-clipboard-text="' + 
+                            generatedColors[i] +
                         '"><div class="color"></div></a>');
             color.css('background', generatedColors[i]);
             palette.append(color);
