@@ -13,7 +13,7 @@ $('#hue-hex-opt').on('click', function(){
     $('#color-list').attr('disabled','');
 });
 
-var colorNames = ['red','orange','yellow','green','blue','purple','pink','monochrome'];
+var colorNames = ['red','orange','yellow','green','blue','purple','pink','monochrome','random'];
 $('#color-list').css('text-transform','capitalize');
 $.each(colorNames, function( index, value ){
     var colorOption = $('<option>'+value+'</option>');
