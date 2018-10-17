@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- <title>LocalStorage</title> -->
+    <title>AJAX Example</title>
+</head>
+<body>
+    <!-- <script> //Script for localStorage lesson
+        localStorage.setItem("username", "Janessa");
+        localStorage.firstName = "Janessa";
+
+        localStorage.setItem("user name", "Alice")
+        localStorage["my name"] = "Tien";
+
+        // Get Data
+        var myname = localStorage.getItem("my name");
+        console.log(myname);
+        var name = localStorage.username;
+        console.log(name)
+
+        // Remove Data
+        localStorage.removeItem("username");
+        localStorage.username = null;
+
+        // localStorage.clear()
+    </script> -->
+    <script>
+        // fetch('https://jsonplaceholder.typicode.com/users')
+        // .then(function(response) {
+        //     return response.json();
+        // })
+        // .then(function(data){
+        //     for (var i = 0; i < data.length; i++) {
+        //         console.log(data[i].username);
+        //     }
+        // })
+
+        //Using Fetch API to Send Data
+        //1. Create the content that you want to send
+        var user = {
+            username: 'htovery',
+            id: 780
+        }
+
+        function sendData(url, content) {
+            //Fetch the URL
+            fetch(url, {
+                // Set your method
+                method: 'POST',
+
+                // Set your headers
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+
+                body: JSON.stringify(content)
+            })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+            })
+        }
+        // sendData('https://jsonplaceholder.typicode.com/users', user);
+
+        //Fetch the URL
+        // fetch('https://jsonplaceholder.typicode.com/users', {
+        //     // Set your method
+        //     method: 'POST',
+
+        //     // Set your headers
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+
+        //     body: JSON.stringify(user)
+        // })
+        // .then(function(response) {
+        //     return response.json();
+        // })
+        // .then(function(data) {
+        //     console.log(data);
+        // })
+
+        //How to handle errors with Fetch API
+        fetch('https://jsonplaceholder.typicode.com/404')
+        .then(function(response) {
+            // console.log(response.ok);
+            console.log(response);
+            if(!response.ok){
+                throw Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(function(data) {
+            console.log(data);
+        })
+        .catch(function(error) {
+            console.log("The error:", error);
+        })
+
+    </script>
+</body>
+</html>

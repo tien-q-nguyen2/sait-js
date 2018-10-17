@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Cat Walk</title>
+  </head>
+  <body>
+
+    <img id="cat" style="position:absolute; left: 0; display: none" src="img/cat.gif">
+
+    <script>
+      var walkForwards = true;
+      if (localStorage.getItem('walkingForward')){
+        walkForwards = localStorage.getItem('walkingForward');
+      }
+
+      var pageJustReloaded = true;
+      function catWalk() {
+        var img = document.getElementById('cat');
+        var currentLeft;
+
+        if(pageJustReloaded){
+          if(localStorage.getItem('currentCatLocation')){
+            currentLeft = parseInt(localStorage.getItem('currentCatLocation'));
+            img.style.left = currentLeft;
+            img.style.display = 'inline';
+          }
+          else {
+            currentLeft = 0;
+          }
+          if(localStorage.getItem('walkingForward') !== undefined){
+            var catWalkingForward = localStorage.getItem('walkingForward');
+            if(catWalkingForward === "true"){
+              walkForwards = true;
+            } else {
+              walkForwards = false;
+            }
+          }
+          pageJustReloaded = false;
+        } else {
+          currentLeft = parseInt(img.style.left);
+        }
+        // console.log('2: ' + walkForwards);
+
+        if (walkForwards && (currentLeft > (window.innerWidth-img.width))) {
+          walkForwards = false;
+        }
+
+        if (!walkForwards && (currentLeft <= 0)) {
+          walkForwards = true;
+        }
+
+        // console.log('3:' + walkForwards);
+        if (walkForwards) {
+          img.style.left = (currentLeft + 10) + 'px';
+        } else {
+          img.style.left = (currentLeft - 10) + 'px';
+        }
+        //Local Storage Exercise
+        localStorage.currentCatLocation = currentLeft;
+        localStorage.walkingForward = walkForwards;
+      }
+      
+      setInterval(catWalk, 50);
+
+
+    </script>
+
+  </body>
+</html>
