@@ -1,6 +1,7 @@
 body {
     background: lightslategrey;
     margin: 5px;
+    height: 105vh;
 }
 
 h1 {
@@ -70,6 +71,21 @@ label {
 
 #submit {
     margin-top: 20px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    background: #eee;
+    border: 0px;
+    outline: none;
+}
+
+#submit:hover {
+    background: lightslategrey;
+    color: white;
+}
+
+#submit:active {
+    background: #666;
+    color: lightskyblue;
 }
 
 .song-container {
