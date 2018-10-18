@@ -120,7 +120,7 @@ nextButton.addEventListener("click", function(event){
 var backButton = document.getElementById('back-button');
 backButton.addEventListener("click", function(event){
     event.preventDefault();
-    getPreviousQuote()
+    getPreviousQuote();
 });
 
 var twitterButton = document.getElementById('twitter-share-button');

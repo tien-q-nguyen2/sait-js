@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Day 9</title>
 </head>
 <body>
+    <div id = 'target'></div>
+
     <script>
         //1
         // for (var i = 0; i < 10; i++){
@@ -87,15 +89,15 @@
         // }
 
         //8
-        let createArray = (num1, ...array) => {
-            console.log(array);
-        }
-        createArray(10, 20, 40, 60, 90); // [20, 40, 60, 90]
+        // let createArray = (num1, ...array) => {
+        //     console.log(array);
+        // }
+        // createArray(10, 20, 40, 60, 90); // [20, 40, 60, 90]
 
-        let createListFromArray = (...list) => {
-            console.log(list);
-        }
-        createListFromArray([10, 20, 40, 60, 90]); // 10, 20, 40, 60, 90
+        // let createListFromArray = (...list) => {
+        //     console.log(list);
+        // }
+        // createListFromArray([10, 20, 40, 60, 90]); // 10, 20, 40, 60, 90
 
         // function product(...numbers) {
         //     return numbers.reduce((currentProduct, number) => currentProduct * number, 1);
@@ -103,6 +105,56 @@
         // console.log(product(3, 4, 5)); // 60
         // console.log(product(3, 4, 5, 6)); // 360
         // console.log(product(1, 2, 3, 4, 5, 6)); // 720
+
+        //9
+        // const user = {
+        //     name: 'Cody',
+        //     loginCount: 1,
+        //     goldStatus: true
+        // };
+        // const className = 'container';
+        // const html = `<div class="${className}">
+        // <h2>Welcome ${user.goldStatus ? ' to our gold status member, ' : ', '}
+        // ${user.name} ! </h2>
+        // Today is ${new Date()} </p>
+        // <p>You have logged in ${++user.loginCount} times.</p>
+        // </div>`;
+        // document.getElementById('target').innerHTML = html;
+
+        //10
+        // const myEmployee = {
+        //     active: true,
+        //     department: 'Engineering'
+        // };
+        // function isActiveEngineer(employee) {
+        //     const {active, department} = employee
+        //     return department === 'Engineering' && active;
+        // }
+        // console.log(`Is myEmployee active? ${isActiveEngineer(myEmployee)}`);
+
+        //11
+        // let type = 'Toyota';
+        // let color = 'silver';
+        // let model = 2007;
+        // const car = {
+        //     type, // instead of type: type
+        //     color, // instead of color: color
+        //     model // instead of model: model
+        // };
+        // console.log(car); //output { type: 'Toyota', color: 'Silver', model: 2007 }
+
+        //12
+        const trips = [
+            { mph: 10, hours: 3 },
+            { mph: 30, hours: 2 },
+            { mph: 25, hours: 4 }
+        ];
+        // for (let i = 0; i < trips.length; i++) {
+        //     console.log(trips[i].mph * trips[i].hours);
+        // }
+        trips.forEach(trip => {
+            console.log(trip.mph * trip.hours);
+        });
 
     </script>
 </body>
