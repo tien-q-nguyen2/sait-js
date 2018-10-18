@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        // for (var i = 0; i < 10; i++){
+        //     console.log(i);
+        // }    
+        // console.log(i);
+        // for (let i = 0; i < 10; i++){
+        //     console.log(i);
+        // }
+        // console.log(i);
+
+        //2
+        // let condition = true;
+        // if(condition) {
+        //     let a = 'Zeta';
+        //     console.log(a);
+        // }
+        // console.log(a);
+
+        //3
+        // const arr = [1,2,3];
+        // const obj = {id:0, name:'Alpha'};
+
+        // arr.push(10,20,30);
+        // obj['name'] = 'Omega';
+
+        // console.log(arr);
+        // console.log(obj);
+
+        //4
+        // const funcs = [];
+        // for (let i = 0; i < 3; i++) {
+        //     funcs.push(function(){
+        //         console.log(i);
+        //     })
+        // }
+        // for (let j=0; j < funcs.length; j++){
+        //     funcs[j](); 
+        // }
+
+        //5
+        // const sum = function(num1, num2) {
+        //     return num1 + num2;
+        // }
+        // const sum = (num1, num2) => num1 + num2;
+        // console.log(sum(3, 4));
+
+        // const fibonacci = function(n) {
+        //     if (n < 3) {
+        //         return 1;
+        //     }
+        //     return fibonacci(n-1) + fibonacci(n-2);
+        // }
+
+        // const fibonacci = n => {
+        //     if (n < 3){ 
+        //         return 1; 
+        //     } 
+        //     return fibonacci(n-1) + fibonacci(n-2);
+        // }
+        // console.log(fibonacci(9));
+
+        //6
+        // const multiply = (num1 = 1, num2 = 1) => {
+        //     if(!num1){
+        //         throw Error("first parameter missing")
+        //     }
+        //     return num1 * num2;
+        // }
+        // console.log(multiply(5,4));
+        // console.log(multiply(4));
+        // console.log(multiply());
+
+        //7
+        // let array = [2, 3, 4, 1];
+        // for (let value of array) {
+        //     console.log(value);
+        // }
+
+        //8
+        let createArray = (num1, ...array) => {
+            console.log(array);
+        }
+        createArray(10, 20, 40, 60, 90); // [20, 40, 60, 90]
+
+        let createListFromArray = (...list) => {
+            console.log(list);
+        }
+        createListFromArray([10, 20, 40, 60, 90]); // 10, 20, 40, 60, 90
+
+        // function product(...numbers) {
+        //     return numbers.reduce((currentProduct, number) => currentProduct * number, 1);
+        // }
+        // console.log(product(3, 4, 5)); // 60
+        // console.log(product(3, 4, 5, 6)); // 360
+        // console.log(product(1, 2, 3, 4, 5, 6)); // 720
+
+    </script>
+</body>
+</html>
