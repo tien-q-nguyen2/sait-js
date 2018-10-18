@@ -10,6 +10,10 @@ h1 {
     text-align: center;
 }
 
+p {
+    line-height: 1.6em;
+}
+
 .centered {
     display: flex;
     flex-direction: column;
@@ -91,10 +95,6 @@ label {
 .song-container {
     padding: 20px 40px 30px;
     font-family: 'Roboto Mono', monospace;
-}
-
-p {
-    line-height: 1.6em;
 }
 
 @media screen and (max-width: 500px) {
