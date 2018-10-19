@@ -55,12 +55,13 @@
     </header>
 
     <!-- Hero Section -->
-    <div class='hero hero-register'></div>
+    <div class='hero hero-register smaller-hero'></div>
 
     <!-- Content Section -->
     <main class='wrapper'>
         <div class='wrapper'>
             <h2>Register with Us</h2>
+            <div id='error-display'></div>
             <div class='centered'>
                 <form action="bouncer.php" method="post">
                     <label for='user-name'>Your Name:
@@ -113,13 +114,14 @@
                     <input id='submit' type="submit" name='send' value="Send"/>
                 </form>
             </div>
-            <div id='error-display'></div>
         </div>
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p id='footer-info'></p>
+        <p>Copyright <span id='copyright-year'></span>. Travel Awayyy. 
+            All rights reserved.</p>
     </footer>
 
     <script src='script/script-mobile.js'></script>
