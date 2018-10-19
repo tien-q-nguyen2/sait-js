@@ -55,7 +55,6 @@
             }
         }
     
-    
         if (!cancelGenerate){
             var colorLuminosity = $('#color-luminosity').val().toLowerCase();
     
@@ -66,7 +65,7 @@
     
             for(var i = 0; i < colorCount; i++){
                 var color = $('<a class="copy-hex" data-clipboard-text="' + 
-                                generatedColors[i] +
+                                generatedColors[i].slice(1) +
                             '"><div class="color"></div></a>');
                 color.css('background', generatedColors[i]);
                 palette.append(color);

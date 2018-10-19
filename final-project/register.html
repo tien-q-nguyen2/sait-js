@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Final Project</title>
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Mobile Menu (normally hidden) -->
+    <div class='mobile-menu closed' id='mobile-menu'>
+        <button id='close-button'>Close</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class = 'header-container'>
+                <div class = 'site-logo'>
+                    <a href = "index.html">
+                        <div>
+                            <h1>Travel Awayyy</h1>
+                        </div>
+                    </a>
+                </div>
+            </a>
+
+            <div class = 'desktop-menu'>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="packages.html">Vacation Packages</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class = "icon-container">
+                <button id='open-button'>
+                    <i class="fas fa-bars fa-2x" ></i>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class='hero hero-register'></div>
+
+    <!-- Content Section -->
+    <main class='wrapper'>
+        <div class='wrapper'>
+            <h2>Register with Us</h2>
+            <div class='centered'>
+                <form action="bouncer.php" method="post">
+                    <label for='user-name'>Your Name:
+                        <input 
+                            type="text" 
+                            id='user-name'
+                            name='user-name' 
+                            placeholder='preferred name'/>
+                    </label> 
+                    <label for='user-address'>Address:
+                        <input 
+                            type="text" 
+                            id='user-address'
+                            name='user-address' 
+                            placeholder='your main address'/>
+                    </label> 
+                    <label for='user-city'>City:
+                        <input 
+                            type="text" 
+                            id='user-city'
+                            name='user-city'/>
+                    </label> 
+                    <label for='user-province'>Province:
+                        <input 
+                            type="text" 
+                            id='user-province'
+                            name='user-province'/>
+                    </label> 
+                    <label for='user-postal'>Postal Code:
+                        <input 
+                            type="text" 
+                            id='user-postal'
+                            name='user-postal'
+                            placeholder="format: A1B2C3"/>
+                        </label> 
+                    <label for='user-email'>Your Email:
+                    <input 
+                        type="email" 
+                        id='user-email'
+                        name='user-email' 
+                        placeholder='address@domain.com'/>
+                    </label> 
+                    <label for='user-phone'>Phone Number:
+                    <input 
+                        type="text" 
+                        id='user-phone'
+                        name='user-phone'/>
+                    </label> 
+                    <br/>
+                    <input id='submit' type="submit" name='send' value="Send"/>
+                </form>
+            </div>
+            <div id='error-display'></div>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p id='footer-info'></p>
+    </footer>
+
+    <script src='script/script-mobile.js'></script>
+    <script src='script/script-register.js'></script>
+    <script src='script/script-footer.js'></script>
+</body>
+</html>

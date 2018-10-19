@@ -4,10 +4,24 @@ body {
 }
 
 .wrapper {
-    /* width: 80%; */
     padding: 40px;
     margin: 0 auto;
     max-width: 1000px;
+}
+
+img {
+    object-fit: cover;
+}
+
+@media screen and (max-width: 610px) {
+    .wrapper {
+        padding: 40px 30px;
+    }
+}
+@media screen and (max-width: 320px) {
+    .wrapper {
+        padding: 40px 25px;
+    }
 }
 
 /* * * * * * * * * * * * * * * * * * * * *
@@ -96,7 +110,7 @@ header {
 }
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 700px) {
     .desktop-menu ul {
         margin: 0;
     }
@@ -128,15 +142,13 @@ header {
     background: coral;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 610px) {
     .desktop-menu {
         display: none;
     }
-
     .icon-container {
         display: flex;
     }
-
     .search-icon {
         display: none;
     }
@@ -154,7 +166,6 @@ header {
 
     display: flex;
     flex-direction: column;
-
 }
 
 .mobile-menu ul {
@@ -173,6 +184,7 @@ header {
 
 .closed {
     transform: translate(300px, 0);
+    position: fixed;
 }
 
 
@@ -243,7 +255,6 @@ Header
 Main
 * * * * * * * * * * * * * * * * * * * * */
 main {
-    /* min-height: 400px; */
     padding: 80px 0;
     background: #eee;
     color: #444;
@@ -266,14 +277,111 @@ main .wrapper {
     margin: 50px auto 0 auto;
     width: 100%;
     max-width: 600px;
+}
 
-    position: relative;
+/* For Packages page only */
+
+.package {
+    display: flex;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+
+    border: 2px solid;
+    transition: 0.5s;
+    background: lightgrey;
+}
+
+.package:hover {
+    transform: translate(0, -15px);
+    box-shadow: 5px 10px 2px 2px #888;
+}
+
+.package img {
+    width: 300px;
+    height: 200px;
+}
+
+.default-img {
+    transition: 0.5s;
+    position: absolute;
+}
+
+.package-info {
+    margin: 0 30px;
+}
+
+#airplane {
+    width: 200px;
+    height: 150px;
+    position: absolute;
+}
+
+@media screen and (max-width: 800px) {
+    #airplane {
+        width: 240px;
+        height: 160px;
+    }
+}
+
+/* For Register Page */
+input {
+    font-family: 'Merriweather', serif;
+    height: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align-last: justify;
+}
+
+form label {
+    margin: 10px 0;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+textarea {
+    width: 70vw;
+    max-width: 750px;
+    min-width: 230px;
+	height: 150px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+    font-family: 'Merriweather', serif;
+    line-height: 1.4em;
+}
+
+#submit {
+    height: 30px;
+    color: orange;
+    font-weight: bold;
+    border: 3px solid orange;
+    padding: 0 15px;
+    border-radius: 20px;
+    text-align-last: center;
+}
+
+#submit:hover {
+    border: 3px solid lightslategrey;
+    background: orange;
+    color: lightslategrey;
+}
+
+#error-display {
+    color: #c14003;
 }
 
 /* * * * * * * * * * * * * * * * * * * * *
 Footer
 * * * * * * * * * * * * * * * * * * * * */
 footer {
+    margin-top: -20px;
     height: 100px;
     background: orange;
 }
