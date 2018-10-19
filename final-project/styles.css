@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background: #ccc;
 }
 
 .wrapper {
@@ -12,7 +13,7 @@ body {
 Header
 * * * * * * * * * * * * * * * * * * * * */
 header {
-    background: coral;
+    background: orange;
     height: 100px;
 }
 
@@ -30,7 +31,7 @@ header {
     width: 300px;
     min-width: 80px;
     height: 100px;
-    background: orange;
+    background: grey;
     margin-right: auto;
     text-align: center;
 }
@@ -46,7 +47,9 @@ header {
 .site-logo h1 {
     font-family: 'Permanent Marker', cursive;
     font-size: 1.8em;
-    color: darkslategrey;
+    color: orange;
+
+    margin: 0 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -154,8 +157,8 @@ Header
     background: 
         linear-gradient(
         180deg, 
-        rgba(0,0,0,0.25) 75%,
-        rgba(255, 183, 88, 0.25)),
+        rgba(0,0,0, 0.5),
+        rgba(0,0,0, 0) 50% ),
         url('img/simon-migaj-421505-unsplash.jpg')
     ;
     background-size: cover;
@@ -182,7 +185,7 @@ Header
 }
 
 .hero-content h1 {
-    /* color: #8FFF54; */
+    color: darkorange;
     font-size: 1.6em;
 }
 
@@ -215,14 +218,14 @@ Main
 main {
     /* min-height: 400px; */
     padding: 80px 0;
-    background: #ccc;
+    background: #eee;
     color: #444;
     font-family: 'Merriweather', serif;
 }
 
 main h2 {
     font-size: 1.8em;
-    color: rgb(179, 59, 179);
+    color: darkorange;
     margin-bottom: 25px;
     padding-left: 8px;
     border-left: 8px solid;
@@ -238,4 +241,12 @@ main .wrapper {
     max-width: 600px;
 
     position: relative;
+}
+
+/* * * * * * * * * * * * * * * * * * * * *
+Footer
+* * * * * * * * * * * * * * * * * * * * */
+footer {
+    height: 100px;
+    background: orange;
 }
