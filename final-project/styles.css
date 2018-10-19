@@ -1,3 +1,11 @@
+/* Author: Tien Quang Nguyen
+Date: Oct 19, 2018
+Course: CPNT 262 - Web Client & Server Programming
+Assignment: Day 9 Workshop - Final Project */
+
+/* * * * * * * * * * * * * * * * * * * * *
+General
+* * * * * * * * * * * * * * * * * * * * */
 body {
     margin: 0;
     background: #ccc;
@@ -54,7 +62,7 @@ header {
     max-width: 280px;
     min-width: 80px;
     height: 100px;
-    background: #666;
+    background: slategrey;
     margin-right: auto;
     text-align: center;
 }
@@ -115,7 +123,7 @@ header {
 
 .desktop-menu ul li a:hover {
     background: white;
-    color: rgb(38, 74, 192);
+    color: rgb(255, 110, 0);
 }
 
 
@@ -130,13 +138,6 @@ header {
 
 .icon-container {
     display: none;
-    width: 100%;
-}
-
-.icon-container button {
-    border: 0;
-    background: orange;
-    color: green;
     width: 100%;
 }
 
@@ -169,9 +170,9 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 400px;
     width: 200px;
-    background: grey;
+    background: lightslategrey;
     transition: 0.3s;
     padding: 20px;
 
@@ -181,15 +182,46 @@ header {
 
 .mobile-menu ul {
     list-style: none;
+    padding: 0;
+}
+
+.mobile-menu button {
+    margin-top: 10px;
+    font-size: 1.2em;
+    padding: 10px;
+    background: lightslategrey;
+
+    border: 2px orange solid;
+    color: orange;
+    text-decoration: none;
+    border-radius: 25px;
+
+    transition: 0.3s;
+}
+
+.mobile-menu button:hover {
+    color: white;
+    text-decoration: none;
+    background: orange;
+    border: 2px white solid;
 }
 
 .mobile-menu a {
     color: white;
-    font-weight: 400;
     text-transform: uppercase;
     display: block;
-    padding: 10px 0;
-    font-size: 1em;
+    padding: 10px 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.mobile-menu a:hover {
+    background: orange;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.2em;
     text-decoration: none;
 }
 
@@ -230,7 +262,7 @@ Hero
         rgba(0,0,0, 0) 50% ),
         url('img/david-edelstein-668768-unsplash.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: 75% 50%;
 }
 
 .hero-register {
@@ -244,13 +276,22 @@ Hero
     background-position: center;
 }
 
-
-
+/* Only on the home page: .hero-content */
+.hero-contact {
+    background: 
+        linear-gradient(
+        180deg, 
+        rgba(0,0,0, 0.5),
+        rgba(0,0,0, 0) 50% ),
+        url('img/berkeley-communications-650145-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+}
 
 .hero-content {
     width: 70%;
     margin: 0 auto;
-    margin-bottom: 200px;
+    margin-bottom: 150px;
     padding: 20px;
     background: rgba(25, 25, 25, 0.5);
     text-align: center;
@@ -264,11 +305,13 @@ Hero
 .hero-content h1 {
     color: darkorange;
     font-size: 1.6em;
+    margin: 5px 0;
 }
 
 .hero-content p {
     color: #ccc;
     font-size: 1.2em;
+    margin: 10px 0;
 }
 
 .hero-content a {
@@ -276,7 +319,9 @@ Hero
     font-size: 1.2em;
     padding: 10px;
 
-    border: 2px rgb(143,255,84) solid;
+    border: 2px orange solid;
+    color: orange;
+    text-decoration: none;
     border-radius: 25px;
 }
 
@@ -284,7 +329,7 @@ Hero
     color: white;
     text-decoration: none;
     background: rgb(200, 100, 0, 0.5);
-    border: 2px white dashed;
+    border: 2px white solid;
     transition: 0.2s;
 }
 
@@ -326,12 +371,24 @@ main .wrapper {
 
     border: 2px solid;
     transition: 0.5s;
-    background: lightgrey;
+    background: #ddd;
+    border-radius: 50px;
 }
 
 .package:hover {
     transform: translate(0, -15px);
     box-shadow: 5px 10px 2px 2px #888;
+
+    background:  rgba(255, 165, 0, 0.25);
+    border-color: darkorange;
+}
+
+.package:hover .package-title {
+    color: rgb(255, 110, 0);
+}
+
+.package:hover .package-desc {
+    color: black;
 }
 
 .package img {
@@ -351,6 +408,7 @@ main .wrapper {
 
 .package-title {
     text-align: center;
+    transition: 0.5s;
 }
 
 #airplane {
@@ -476,6 +534,7 @@ form label {
 .agent {
     min-width: 200px;
     padding: 20px;
+    margin: 10px 0;
 
     display: flex;
     flex-direction: column;
@@ -488,8 +547,12 @@ form label {
     align-items: center;
 }
 
-.agent-info h3, .agent-info h4 {
+.agent-info h3 {
     margin: 10px 0;
+}
+
+.agent-info h4 {
+    margin: 0;
 }
 
 /* * * * * * * * * * * * * * * * * * * * *
@@ -508,4 +571,6 @@ footer {
 
 footer p {
     margin: 5px 0;
+    font-weight: bold;
+    color: #555;
 }

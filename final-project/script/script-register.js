@@ -1,7 +1,14 @@
+/* Author: Tien Quang Nguyen
+Date: Oct 19, 2018
+Course: CPNT 262 - Web Client & Server Programming
+Assignment: Day 9 Workshop - Final Project */
+
 let errorMessage = '';
 let submitButton = document.getElementById('submit');
 let errorDisplay = document.getElementById('error-display');
 
+//Every time the user click submit, go through every form element and populate
+// the errorMessage variable
 submitButton.addEventListener('click', function(event) {
     event.preventDefault();
     errorMessage = '';
@@ -56,7 +63,7 @@ submitButton.addEventListener('click', function(event) {
             errorMessage += '<p>Please enter a valid 10-digit phone number</p>';
         }
     }
-
+    //Show the accumulated error message (if any) on the error display element
     errorDisplay.innerHTML = errorMessage;
 })
 
