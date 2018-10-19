@@ -4,7 +4,8 @@ body {
 }
 
 .wrapper {
-    width: 80%;
+    /* width: 80%; */
+    padding: 40px;
     margin: 0 auto;
     max-width: 1000px;
 }
@@ -28,16 +29,16 @@ header {
     justify-content: space-evenly;
     flex-wrap: wrap;
     
-    width: 300px;
+    max-width: 280px;
     min-width: 80px;
     height: 100px;
-    background: grey;
+    background: #666;
     margin-right: auto;
     text-align: center;
 }
 
 .site-logo a {
-    border: 4px blue solid;
+    text-decoration: none;
 }
 
 .site-logo a:hover {
@@ -45,6 +46,9 @@ header {
 }
 
 .site-logo h1 {
+    height: 100px;
+    display: flex;
+    align-items: center;
     font-family: 'Permanent Marker', cursive;
     font-size: 1.8em;
     color: orange;
@@ -52,19 +56,13 @@ header {
     margin: 0 20px;
 }
 
-@media screen and (max-width: 800px) {
-    .site-logo {
-        justify-content: center;
-    }
-}
-
-.main-nav {
+.desktop-menu {
     height: 100px;
     display: flex;
     align-items: center;
 }
 
-.main-nav ul {
+.desktop-menu ul {
     list-style: none;
     display: flex;
     align-items: center;
@@ -73,12 +71,12 @@ header {
     margin: 0 20px;
 }
 
-.main-nav ul li {
+.desktop-menu ul li {
     height: 100px;
     display: flex;
 }
 
-.main-nav ul li a {
+.desktop-menu ul li a {
     padding: 0 30px;
     text-decoration: none;
     height: 100%;
@@ -86,68 +84,97 @@ header {
     align-items: center;
     font-size: 1.2em;
     font-weight: bold;
-    color: blue;
+    text-align: center;
+    max-width: 160px;
 
     transition-duration: 0.3s;
 }
 
-.main-nav ul li a:hover {
+.desktop-menu ul li a:hover {
     background: rgb(255, 183, 88);
     color: rgb(38, 74, 192);
 }
 
-.upper-mobile, .lower-mobile {
-    display: none;
-    height: 50px;
-}
 
-@media screen and (max-width: 800px) {
-    .main-nav ul {
+@media screen and (max-width: 730px) {
+    .desktop-menu ul {
         margin: 0;
     }
-    .main-nav ul li a {
+    .desktop-menu ul li a {
         padding: 0 25px;
     }
 }
 
-@media screen and (max-width: 590px) {
-    .full-nav {
+.icon-container {
+    display: none;
+    width: 100%;
+}
+
+.icon-container button {
+    border: 0;
+    background: orange;
+    color: green;
+    width: 100%;
+}
+
+.icon-container button {
+    border: 0;
+    background: orange;
+    color: white;
+    width: 100%;
+}
+
+.icon-container button:hover {
+    background: coral;
+}
+
+@media screen and (max-width: 650px) {
+    .desktop-menu {
         display: none;
     }
-    .mobile-nav {
-        display: flex;
-        flex-direction: column;
-    }
-    .upper-mobile, .lower-mobile {
+
+    .icon-container {
         display: flex;
     }
-    .main-nav ul {
-        margin: 0 30px;
-        width: 100%;
-        height: 100%;
-    }
-    .main-nav ul li {
-        width: 50%;
-        height: 100%;
-    }
-    .main-nav ul li a {
-        padding: 0 10px;
-        width: 100%;
-    }
-    .site-logo {
-        margin-right: 0;
+
+    .search-icon {
+        display: none;
     }
 }
 
-@media screen and (max-width: 340px) {
-    .main-nav ul {
-        margin: 0;
-    }
-    .main-nav ul li a {
-        font-size: 1em;
-        padding: 0 8px;
-    }
+.mobile-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 200px;
+    background: grey;
+    transition: 0.3s;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
 }
+
+.mobile-menu ul {
+    list-style: none;
+}
+
+.mobile-menu a {
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    display: block;
+    padding: 10px 0;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+.closed {
+    transform: translate(300px, 0);
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * *
 Header
@@ -207,7 +234,7 @@ Header
 .hero-content a:hover{
     color: white;
     text-decoration: none;
-    background: rgb(179, 59, 179, 0.5);
+    background: rgb(200, 100, 0, 0.5);
     border: 2px white dashed;
     transition: 0.2s;
 }

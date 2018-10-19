@@ -6,38 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Final Project</title>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+    crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Mobile Menu (normally hidden) -->
+    <div class='mobile-menu closed' id='mobile-menu'>
+        <button id='close-button'>Close</button>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="packages.html">Packages</a></li>
+            <li><a href="registration.html">Registration</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <!-- Header Section -->
     <header>
         <div class = 'header-container'>
-            <div class = 'site-logo'>
-                <!-- <a href="index.html">                
-                    <img src="svg/VietnameseBasicsLogo.svg" alt="My Awesome SVG">
-                </a> -->
-
-                <div>
-                    <h1>Travel Awayyy</h1>
+                <div class = 'site-logo'>
+                    <a href = "index.html">
+                        <div>
+                            <h1>Travel Awayyy</h1>
+                        </div>
+                    </a>
                 </div>
-            </div>
+            </a>
 
-            <div class = 'main-nav full-nav'>
+            <div class = 'desktop-menu'>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="packages.html">Packages</a></li>
+                    <li><a href="packages.html">Vacation Packages</a></li>
                     <li><a href="registration.html">Registration</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="mobile-mav upper-mobile">
-                <div class = 'main-nav'>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="packages.html">Packages</a></li>
-                        <li><a href="registration.html">Registration</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
+
+            <div class = "icon-container">
+                <button id='open-button'>
+                    <i class="fas fa-bars fa-2x" ></i>
+                </button>
             </div>
 
         </div>
@@ -47,24 +58,29 @@
     <div class='hero'>
         <div class='hero-content'>
             <h1>Travel awayyy to unforgettable destinations</h1>
-            <p>We match travellers with their new favorite places</p>
-            <a href="./product.html">See Amazing Packages</a>
+            <p>We match Calgarian travellers with their new favorite places</p>
+            <a href="./packages.html">See Amazing Packages</a>
         </div>
     </div>
 
+    <!-- Content Section -->
     <main class='wrapper'>
         <div class='wrapper'>
             <h2>Escape from the everyday</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia explicabo unde aut corporis. Architecto unde laboriosam perspiciatis. Voluptatem placeat fugiat beatae voluptas magnam qui, eaque error maxime facere, ipsum labore!</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, cumque ipsam! Reprehenderit in non iusto ducimus tempore! Exercitationem quae dolorum enim fugiat eos accusamus, sint amet tenetur eligendi inventore repellendus.</p>
-            
+           
+            <h2>About Travel Awayyy</h2>
+            <p>WE are YOUR local travel agency located in Calgary, Alberta. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam asperiores minus sit libero, unde eum. Iste consequuntur, sit blanditiis quam quod ea totam sunt ratione ex accusantium debitis libero odit!</p>
         </div>
     </main>
 
+    <!-- Footer Section -->
     <footer>
-
+        <p id='footer-info'></p>
     </footer>
 
-    <script src='script.js'></script>
+    <script src='script/script-mobile.js'></script>
+    <script src='script/script-footer.js'></script>
 </body>
 </html>
